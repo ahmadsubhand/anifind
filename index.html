@@ -255,8 +255,8 @@
     }
 
     const thisSeason = document.querySelector('#this_season');
-    fetch(`https://api.jikan.moe/v4/seasons/${yearNow}/${season}?limit=20`)
-    // fetch(`this_season.json`)
+    // fetch(`https://api.jikan.moe/v4/seasons/${yearNow}/${season}?limit=20`)
+    fetch(`this_season.json`)
       .then(response => response.json())
         .then(response => {
           let i = 0;
@@ -277,8 +277,8 @@
         });
 
     const nextSeason = document.querySelector('#next_season');
-    fetch(`https://api.jikan.moe/v4/seasons/${yearNext}/${seasonNext}?limit=20`)
-    // fetch('next_season.json')
+    // fetch(`https://api.jikan.moe/v4/seasons/${yearNext}/${seasonNext}?limit=20`)
+    fetch('next_season.json')
       .then(response => response.json())
         .then(response => {
           let i = 0;
@@ -299,8 +299,8 @@
         });
     
     const topRated = document.querySelector('#top_rated');
-    fetch('https://api.jikan.moe/v4/top/anime?limit=10')
-    // fetch('top_rated.json')
+    // fetch('https://api.jikan.moe/v4/top/anime?limit=10')
+    fetch('top_rated.json')
       .then(response => response.json())
       .then(response => {
         const topAnimeList = response.data;
@@ -317,8 +317,8 @@
       });
 
     const topChara = document.querySelector('#top_chara');
-    fetch('https://api.jikan.moe/v4/top/characters?limit=10')
-    // fetch('top_chara.json')
+    // fetch('https://api.jikan.moe/v4/top/characters?limit=10')
+    fetch('top_chara.json')
       .then(response => response.json())
       .then(response => {
         const topCharaList = response.data;
@@ -336,8 +336,8 @@
 
     const topLastWeek = document.querySelector('#top_last_week');
     // fetch('http://cors-anywhere.herokuapp.com/https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/top-anime.json?slug=top-anime')
-    fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/top-anime.json?slug=top-anime')
-    // fetch('top_week.json')
+    // fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/top-anime.json?slug=top-anime')
+    fetch('top_week.json')
       .then(response => response.json())
         .then(response => {
           let i = 0;
@@ -361,8 +361,8 @@
     
     const topMale = document.querySelector('#top_male');
     // fetch('http://cors-anywhere.herokuapp.com/https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/male-characters.json?slug=male-characters')
-    fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/male-characters.json?slug=male-characters')
-    // fetch('top_male.json')
+    // fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/male-characters.json?slug=male-characters')
+    fetch('top_male.json')
       .then(response => response.json())
         .then(response => {
           let i = 0;
@@ -386,8 +386,8 @@
     
     const topFemale = document.querySelector('#top_female');
     // fetch('http://cors-anywhere.herokuapp.com/https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/female-characters.json?slug=female-characters')
-    fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/female-characters.json?slug=female-characters')
-    // fetch('top_female.json')
+    // fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/female-characters.json?slug=female-characters')
+    fetch('top_female.json')
       .then(response => response.json())
         .then(response => {
           let i = 0;

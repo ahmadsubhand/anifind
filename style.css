@@ -133,7 +133,7 @@ header {
 }
 .menu_list li div {
   font-family: 'Noto Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 .menu_list li ul {
@@ -149,7 +149,7 @@ header {
   align-items: center;
   gap: 0.5rem;
   font-family: 'Noto Sans', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 .menu_list li ul img {
