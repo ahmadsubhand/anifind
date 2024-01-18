@@ -38,24 +38,24 @@
           <li>
             <div class="link" onclick="closeList(this)">Search Anime</div>
             <ul class="hidden">
-              <li><a href="#" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Search</a></li>
-              <li><a href="#" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">This season</a></li>
-              <li><a href="#" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Next season</a></li>
+              <li><a href="search.html" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Search</a></li>
+              <li><a href="#this_session_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">This season</a></li>
+              <li><a href="#next_season_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Next season</a></li>
             </ul>
           </li>
           <li>
             <div class="link" onclick="closeList(this)">Top Anime</div>
             <ul class="hidden">
-              <li><a href="#" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Top rated</a></li>
-              <li><a href="#" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top last week</a></li>
+              <li><a href="#top_rated_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Top rated</a></li>
+              <li><a href="#top_last_week_card" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top last week</a></li>
             </ul>
           </li>
           <li>
             <div class="link" onclick="closeList(this)">Top Character</div>
             <ul class="hidden">
-              <li><a href="#" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Most favorited</a></li>
-              <li><a href="#" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top male character</a></li>
-              <li><a href="#" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top female character</a></li>
+              <li><a href="#top_chara_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Most favorited</a></li>
+              <li><a href="#top_male_card" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top male character</a></li>
+              <li><a href="#top_female_card" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top female character</a></li>
             </ul>
           </li>
         </ul>
@@ -69,27 +69,23 @@
   <main>
     <section class="search padding bg_1">
       <div class="search_top">
-        <form>
-          <input type="text" placeholder="Search anime title ..." class="bg_3 c_2">
+        <form action="/search.html">
+          <input type="text" name="keyword" placeholder="Search anime title ..." class="bg_3 c_2">
           <button>Search</button>
         </form>
       </div>
       <div class="search_bot">
         <p class="c_1">Explore Anime Titles: <br> Your Gateway to Excitement!</p>
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="this_session_card">
           <div class="bg_2 mal"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">This Season</div>
           <ul id="this_season">
-            <li><img src="assets/frieren.jpg"><span>Anime 1</span></li>
-            <li><img src="assets/frieren.jpg"><span>Anime 2</span></li>
-            <li><img src="assets/frieren.jpg"><span>Anime 3</span></li>
+            
           </ul>
         </a>
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="next_season_card">
           <div class="bg_2 mal"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Next Season</div>
           <ul id="next_season">
-            <li><img src="assets/frieren.jpg"><span>Anime 1</span></li>
-            <li><img src="assets/frieren.jpg"><span>Anime 2</span></li>
-            <li><img src="assets/frieren.jpg"><span>Anime 3</span></li>
+            
           </ul>
         </a>
       </div>
@@ -100,50 +96,16 @@
         <p>Top Anime</p>
       </div>
       <div class="anime_bot">
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="top_rated_card">
           <div class="bg_2 mal"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Top Rated</div>
           <ul id="top_rated">
-            <li>
-              <div class="anime_number">1</div>
-              <div class="anime_img">
-                <img src="assets/frieren.jpg"><span>Anime 1</span>
-              </div>
-            </li>
-            <li>
-              <div class="anime_number">2</div>
-              <div class="anime_img">
-                <img src="assets/frieren.jpg"><span>Anime 2</span>
-              </div>
-            </li>
-            <li>
-              <div class="anime_number">3</div>
-              <div class="anime_img">
-                <img src="assets/frieren.jpg"><span>Anime 2</span>
-              </div>
-            </li>
+            
           </ul>
         </a>
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="top_last_week_card">
           <div class="bg_2 anitrendz c_1"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top Last Week</div>
           <ul id="top_last_week">
-            <li>
-              <div class="anime_number">1</div>
-              <div class="anime_img">
-                <img src="assets/frieren.jpg"><span>Anime 1</span>
-              </div>
-            </li>
-            <li>
-              <div class="anime_number">2</div>
-              <div class="anime_img">
-                <img src="assets/frieren.jpg"><span>Anime 2</span>
-              </div>
-            </li>
-            <li>
-              <div class="anime_number">3</div>
-              <div class="anime_img">
-                <img src="assets/frieren.jpg"><span>Anime 2</span>
-              </div>
-            </li>
+            
           </ul>
         </a>
       </div>
@@ -154,73 +116,22 @@
         <p>Top Character</p>
       </div>
       <div class="chara_bot">
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="top_chara_card">
           <div class="bg_2 mal"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Most Favorited</div>
           <ul id="top_chara">
-            <li class="bg_2">
-              <div class="anime_number">1</div>
-              <div>
-                Chara 1<img src="assets/frieren.jpg">
-              </div>
-            </li>
-            <li class="bg_2">
-              <div class="anime_number">2</div>
-              <div>
-                Chara 2<img src="assets/frieren.jpg">
-              </div>
-            </li>
-            <li class="bg_2">
-              <div class="anime_number">3</div>
-              <div>
-                Chara 3<img src="assets/frieren.jpg">
-              </div>
-            </li>
+            
           </ul>
         </a>
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="top_male_card">
           <div class="bg_2 anitrendz c_1"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top Male Character</div>
           <ul id="top_male">
-            <li class="bg_2">
-              <div class="anime_number">1</div>
-              <div>
-                Chara 1<img src="assets/frieren.jpg">
-              </div>
-            </li>
-            <li class="bg_2">
-              <div class="anime_number">2</div>
-              <div>
-                Chara 2<img src="assets/frieren.jpg">
-              </div>
-            </li>
-            <li class="bg_2">
-              <div class="anime_number">3</div>
-              <div>
-                Chara 3<img src="assets/frieren.jpg">
-              </div>
-            </li>
+            
           </ul>
         </a>
-        <a href="#" class="card c_2 bg_3">
+        <a href="#" class="card c_2 bg_3" id="top_female_card">
           <div class="bg_2 anitrendz c_1"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top Female Character</div>
           <ul id="top_female">
-            <li class="bg_2">
-              <div class="anime_number">1</div>
-              <div>
-                Chara 1<img src="assets/frieren.jpg">
-              </div>
-            </li>
-            <li class="bg_2">
-              <div class="anime_number">2</div>
-              <div>
-                Chara 2<img src="assets/frieren.jpg">
-              </div>
-            </li>
-            <li class="bg_2">
-              <div class="anime_number">3</div>
-              <div>
-                Chara 3<img src="assets/frieren.jpg">
-              </div>
-            </li>
+            
           </ul>
         </a>
       </div>
@@ -383,8 +294,9 @@
           }, '');
           topMale.innerHTML = topMaleEl;
         });
-    
+
     const topFemale = document.querySelector('#top_female');
+    // fetch('https://corsproxy.io/?' + encodee)
     // fetch('http://cors-anywhere.herokuapp.com/https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/female-characters.json?slug=female-characters')
     // fetch('https://www.anitrendz.com/_next/data/SXBntXpTEo1NZDHhs8HR-/charts/female-characters.json?slug=female-characters')
     fetch('top_female.json')

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniFind - Search Anime Title</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/500fe0f482.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="search_body">
+  <header class="bg_1">
+    <div class="head_menu"><i class="fa-solid fa-bars icon" onclick="closeMenu()"></i></div>
+    <div class="head_logo c_1">
+      AniFind
+    </div>
+    <!-- <div class="head_mid c_2">
+      Get anime information here!
+    </div> -->
+    <div class="head_right">
+      <a href="https://myanimelist.net/" target="_blank"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo"></a>
+      <a href="https://www.anitrendz.com/" target="_blank"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo"></a>
+    </div>
+  </header>
+
+  <div class="menu_wrapper hidden">
+    <div class="menu bg_1">
+      <div class="menu_top">
+        <i class="fa-solid fa-xmark icon" onclick="closeMenu()"></i>
+        <div class="c_1">AniFind</div>
+      </div>
+      <div class="menu_mid">
+        <ul class="menu_list">
+          <li>
+            <div class="link" onclick="closeList(this)">Search Anime</div>
+            <ul class="hidden">
+              <li><a href="search.html" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Search</a></li>
+              <li><a href="/index.html#this_session_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">This season</a></li>
+              <li><a href="/index.html#next_season_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Next season</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link" onclick="closeList(this)">Top Anime</div>
+            <ul class="hidden">
+              <li><a href="/index.html#top_rated_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Top rated</a></li>
+              <li><a href="/index.html#top_last_week_card" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top last week</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link" onclick="closeList(this)">Top Character</div>
+            <ul class="hidden">
+              <li><a href="/index.html#top_chara_card" class="link"><img src="assets/MyAnimeList_Logo.png" alt="MAL Logo">Most favorited</a></li>
+              <li><a href="/index.html#top_male_card" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top male character</a></li>
+              <li><a href="/index.html#top_female_card" class="link"><img src="assets/Anitrenz_logo.png" alt="AniTrenz Logo">Top female character</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="menu_bot">
+        <span class="c_2">Switch theme</span> <i class="fa-solid fa-circle-half-stroke icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <section class="search padding bg_1">
+    <div class="search_top">
+      <form action="/search.html">
+        <input type="text" name="keyword" placeholder="Search anime title ..." class="bg_3 c_2">
+        <button>Search</button>
+      </form>
+    </div>
+    <div class="search_bot">
+      <p class="c_1">Explore Anime Titles: <br> Your Gateway to Excitement!</p>
+      <ul class="keyword">
+        <img src="assets/kaguya.png" alt="">
+        <img src="assets/hayasaka.png" alt="">
+      </ul>
+    </div>
+  </section>
+
+  <!-- <section class="synopsis">
+    <i class="fa-solid fa-xmark icon" onclick="closeDetail()"></i>
+    <div class="bg_2">
+      <img src="assets/frieren.jpg">
+      <div class="synopsis_content c_2">
+        During their decade-long quest to defeat the Demon King, the members of the hero's party—Himmel himself, the
+        priest Heiter, the dwarf warrior Eisen, and the elven mage Frieren—forge bonds through adventures and battles,
+        creating unforgettable precious memories for most of them.\n\nHowever, the time that Frieren spends with her
+        comrades is equivalent to merely a fraction of her life, which has lasted over a thousand years. When the party
+        disbands after their victory, Frieren casually returns to her \"usual\" routine of collecting spells across the
+        continent. Due to her different sense of time, she seemingly holds no strong feelings toward the experiences she
+        went through.\n\nAs the years pass, Frieren gradually realizes how her days in the hero's party truly impacted
+        her. Witnessing the deaths of two of her former companions, Frieren begins to regret having taken their presence
+        for granted; she vows to better understand humans and create real personal connections. Although the story of
+        that once memorable journey has long ended, a new tale is about to begin.\n\n[Written by MAL Rewrite]
+      </div>
+    </div>
+  </section> -->
+
+  <script>
+    function closeMenu() {
+      const menu = document.querySelector('.menu_wrapper');
+      menu.classList.toggle('hidden');
+    }
+
+    function closeList(el) {
+      el.nextElementSibling.classList.toggle('hidden');
+    }
+
+    function showSynopsis(id) { 
+      document.getElementById(id).classList.toggle('hidden');
+    }
+
+    document.body.classList.add('search_body');
+
+    const linkString = window.location.search; // get url string
+    const urlParameter = new URLSearchParams(linkString) // get url parameter
+    const keywordValue = urlParameter.get('keyword'); // get parameter value
+    if (keywordValue) {
+      const keyword = document.querySelector('.keyword');
+      fetch('https://api.jikan.moe/v4/anime?q=' + keywordValue)
+        .then(response => response.json())
+        .then(response => {
+          const animeList = response.data;
+          const animeListEl = animeList.reduce((result, anime) => {
+            const animeGenre = anime.genres.reduce((result, genre) => {
+              return `${result} <span class="text-capitalize">${genre.name}</span>`;
+            }, '');
+            return `${result} 
+            <li class="bg_3">
+              <div class="keyword_left">
+                <img src="${anime.images.webp.large_image_url}">
+              </div>
+              <div class="keyword_right c_2">
+                # ${anime.rank} <br>
+                ${anime.title} (${anime.type})<br>
+                ${anime.episodes ? `${anime.episodes} eps` : ''}${anime.season ? `, ${anime.season}` : ''} 
+                ${anime.year || ''} <br>
+                ${anime.score ? `★ ${anime.score}` : ''}<br>
+                <div class="genre">
+                  ${animeGenre}
+                </div>
+                <button class="c_2" onclick="showSynopsis('${anime.mal_id}')">Show Synopsis</button>
+              </div>
+              <section class="synopsis hidden" id="${anime.mal_id}">
+                <i class="fa-solid fa-xmark icon" onclick="showSynopsis('${anime.mal_id}')"></i>
+                <div class="bg_2">
+                  <img src="${anime.images.webp.large_image_url}">
+                  <div class="synopsis_content c_1">
+                    ${anime.synopsis}
+                  </div>
+                </div>
+              </section>
+            </li>`
+          }, '');
+          keyword.innerHTML = animeListEl;
+          document.body.classList.remove('search_body');
+        })
+    }
+  </script>
+</body>
+
+</html>
